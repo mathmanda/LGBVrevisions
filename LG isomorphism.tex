@@ -5,7 +5,7 @@
 \usepackage{tikz, graphicx,color,geometry}
 \usepackage{todonotes}
 \usepackage[all]{xy}
-%\usepackage{hyperref}
+\usepackage{hyperref}
 %\usepackage[utf8]{inputenc}
 %\usepackage{amsrefs}
 %\usepackage{verbatimbox} 
@@ -30,6 +30,14 @@
 \newtheorem{notat}{Notation} 
 \newtheorem{fact}{Fact} 
 \newtheorem{question}{Question} 
+
+\providecommand*{\propertyautorefname}{Property}
+\newtheorem{property}{\propertyautorefname}
+\renewcommand{\theproperty}{(\fnsymbol{property})}
+
+\newtheorem*{thm1}{Theorem \ref{t:thm1}}
+\newtheorem*{thm2}{Theorem \ref{t:thm2}}
+
 
 %Mathbb letters
 \newcommand{\RR}{\mathbb{R}}
@@ -175,9 +183,9 @@ Interestingly, the LG model provided by BHK mirror symmetry does not yield the s
 
 The main theorems of this work justify calling these a mirror pair. The first gives a state space correspondence. 
 
-\begin{thm}\label{t:BViso}
+\begin{thm1}
 There is a mirror map $\sA_{W,\s{G}}\cong \sB_{W^T,\s{G^T}}$, which preserves the bi--degree. 
-\end{thm}
+\end{thm1}
 
 \begin{rem}
 	If one views the bi--degree correctly, then the mirror map of Theorem~\ref{t:BViso} can be viewed as a rotation of the Hodge diamond by a right angle, as one expects in mirror symmetry.
@@ -187,18 +195,33 @@ On the way to proving this theorem, we obtain an isomorphism (called the twist m
 
 The state space of FJRW theory itself possesses an interesting algebraic structure, namely it can be given the structure of a Frobenius algebra. The LG B-model state space can also be given such a structure. For LG to LG mirror symmetry, we also expect the isomorphism of state spaces to extend to an isomorphism of Frobenius algebras. This can be verified for many pairs $(W,G)$ as we see in the second theorem. 
 
-\begin{thm}\label{t:Algiso}
-Suppose that  $W$, $G$  can be decomposed in such a way that 
+\begin{property}\label{property}
+Let $W$ be a non-degenerate, invertible singularity, and let $G$ be an admissible group of symmetries of $W$. We say that \emph{the pair $(W,G)$ has \autoref{property}} if, 
+\begin{enumerate}
+\item $W$ can be decomposed as
 %\begin{equation}\label{Wdecomp}
  $   W = \sum_{i=1}^{M} W_i ,$
 %\end{equation}
-where the $W_i$ are themselves invertible polynomials having no variables in common with any other $W_j$ and that 
-\begin{enumerate}
-\item For any element $g$ of $\s{G}$ whose associated sector  $\sA_g \subseteq \sA_{W,\s{G}}$ is nonempty, and for each $i\in \{1,\dots ,M\}$ the action of $g$ fixes either all of the variables in $W_i$ or none of them. 
-\item For any element $g'$ of $(\s{G})^T$ whose associated sector of $\sB_{g'} \subseteq \sB_{W^T,(\s{G})^T}$ is non--empty, and for each $i\in \{1,\dots ,M\}$ the action of $g'$ fixes either all of the variables in $W_i^T$ or none of them.
+where the $W_i$ are themselves invertible polynomials having no variables in common with any other $W_j$.  
+\item For any element $g$ of $G$ whose associated sector  $\sA_g \subseteq \sA_{W,G}$ is nonempty, and for each $i\in \{1,\dots ,M\}$ the action of $g$ fixes either all of the variables in $W_i$ or none of them. 
+\item For any element $g'$ of $G^T$ whose associated sector of $\sB_{g'} \subseteq \sB_{W^T,G^T}$ is non-empty, and for each $i\in \{1,\dots ,M\}$ the action of $g'$ fixes either all of the variables in $W_i^T$ or none of them.
 \end{enumerate}
-Then $\sA_{W, \s{G}} \cong \sB_{W^T, \s (G^T)}$ as Frobenius algebras.
-\end{thm}
+\end{property}
+
+
+\begin{thm2}
+If $W$ and $\s G$ satisfy \autoref{property}
+%Suppose that  $W$, $G$  can be decomposed in such a way that 
+%%\begin{equation}\label{Wdecomp}
+% $   W = \sum_{i=1}^{M} W_i ,$
+%%\end{equation}
+%where the $W_i$ are themselves invertible polynomials having no variables in common with any other $W_j$ and that 
+%\begin{enumerate}
+%\item For any element $g$ of $\s{G}$ whose associated sector  $\sA_g \subseteq \sA_{W,\s{G}}$ is nonempty, and for each $i\in \{1,\dots ,M\}$ the action of $g$ fixes either all of the variables in $W_i$ or none of them. 
+%\item For any element $g'$ of $(\s{G})^T$ whose associated sector of $\sB_{g'} \subseteq \sB_{W^T,(\s{G})^T}$ is non--empty, and for each $i\in \{1,\dots ,M\}$ the action of $g'$ fixes either all of the variables in $W_i^T$ or none of them.
+%\end{enumerate}
+then $\sA_{W, \s{G}} \cong \sB_{W^T, \s (G^T)}$ as Frobenius algebras.
+\end{thm2}
 
 The Borcea--Voisin construction has been the topic of several recent articles, which are related to the current work. We briefly review those results.  
 
@@ -322,7 +345,7 @@ The isomorphism in Theorem \ref{t:Wall} certainly will hold for the restricted p
 where $\omega_g = dx_{i_1} \wedge \ldots \wedge dx_{i_s}$ for $i_j \in I_g$.
 
 \begin{notat}\label{FJRWNotation}
-The state space $\sA_{W,G}$ is a $\CC$--vector space. We can construct a basis out of elements of the form $\fjrw{m}{g}$, where $I_g = \{i_1, \ldots, i_r\}$ and $m$ is a monomial in $\CC[x_{i_1}, \ldots, x_{i_r}]$.  We say that $\fjrw{m}{g}$ is \defital{narrow} if $ I_g = \emptyset$ (in which case $m=1$), and \defital{broad} otherwise.
+The state space $\sA_{W,G}$ is a $\CC$--vector space. We can construct a basis out of elements of the form $\fjrw{m}{g}$, where $I_g = \{i_1, \ldots, i_r\}$ and $m$ is a monomial in $\CC[x_{i_1}, \ldots, x_{i_r}]$, plus the volume form $\omega_g$.  We say that $\fjrw{m}{g}$ is \defital{narrow} if $ I_g = \emptyset$ (in which case $m=1$), and \defital{broad} otherwise.
 \end{notat}
 
 
@@ -581,7 +604,7 @@ In some sense these theorems are LG analogues of results in both the work of Art
 
 \subsection{State Space isomorphism}
 In this section we will prove Theorem \ref{t:BViso}, which we restate here:
-\begin{thm}
+\begin{thm}\label{t:thm1}\label{t:BViso}
 There is an isomorphism (the mirror map) $\sA_{W,\s{G}}\cong \sB_{W^T,\s{G^T}}$, which preserves the bi--degree. 
 \end{thm} 
 
@@ -690,7 +713,7 @@ On the basis we have defined, the definition of the product is
 0 & \text{ otherwise} \\ \end{array}\right.
 \]
 
-In \cite{FJJS}, it was shown that for LG models $(W,G)$ satisfying the conditions of Theorem \ref{t:Algiso}, we have an isomorphism of Frobenius algebras
+In \cite{FJJS}, it was shown that for LG models $(W,G)$ satisfying \autoref{property}, we have an isomorphism of Frobenius algebras
 \[
 \sA_{W,G}\cong \sB_{W^T,G^T}, 
 \]
@@ -716,7 +739,11 @@ $\sA_{\tw{W},\tw{G}}$&\begin{tikzpicture} \draw[<-] (0,0) -- (1,0); \node at (.5
 
 Using this description as a guide, we will define a map $\varphi:\sB_{W^T,(\s{G})^T} \to \sB_{W^T,\s{G^T}}$, which is closely related (but not equal) to the composition $tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1$ of the solid arrows in the diagram, each of which is a degree--preserving isomorphism of graded vector spaces.  We then show that $\varphi$ preserves products and pairings. The isomorphism of Theorem \ref{t:Algiso} is the composition $\varphi\circ\kappa_1^{-1}$.  
 
+\begin{thm}\label{t:thm2}\label{t:Algiso}
+If $W$ and $\s G$ satisfy \autoref{property},
+then $\sA_{W, \s{G}} \cong \sB_{W^T, \s (G^T)}$ as Frobenius algebras.
 
+\end{thm}
 
 \begin{rem}
 It is also worth noting that in the diagram, there are two \emph{different} B--models. This is related to the so--called multiple mirror phenomenon as mentioned in the Introduction. The B--model in the middle of the right-hand side is BHK mirror for $(W,\s{G})$. However, as we have seen, $\s{G^T}\neq (\s{G})^T$ and so the corresponding geometry does not fit the Borcea--Voisin construction. Because of the LG/CY correspondence, we expect a B--model whose corresponding geomoetry is Borcea--Voisin type, which is what the upper right--hand B--model is. Also, since we have two B models, both mirror to the same A-model, it should be expected that the two B model state spaces are isomorphic. 
