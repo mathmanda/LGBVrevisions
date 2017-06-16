@@ -399,7 +399,7 @@ Suppose $W=\sum_{i=1}^n  \prod_{j=1}^n x_j^{a_{i,j}}$ is an invertible polynomia
 \[
 W^T = \sum_{i=1}^n  \prod_{j=1}^n x_j^{a_{j,i}}. 
 \]
-In other words, if $A_W$ is the exponent matrix for $W$, then $W^T$ is the polynomial corresponding to the exponent matrix $A_W^T$. One can check that $W^T$ is also an invertible polynomial (cf. \cite{ChR1}). 
+In other words, if $A_W$ is the exponent matrix for $W$, then $W^T$ is the polynomial corresponding to the exponent matrix $A_W^T$. One can check that $W^T$ is also an invertible polynomial (cf. \cite{ChR}). 
  
 If $G$ is an admissible symmetry group for a polynomial $W$, then the \defital{mirror group} $G^T$ is defined by 
 \[
@@ -602,7 +602,7 @@ We now have all of the necessary tools to prove the mirror symmetry statements o
 
 In some sense these theorems are LG analogues of results in both the work of Artebani--Boisierre--Sarti in \cite{ABS} and of Chiodo--Kalashnikov--Veniani in \cite{CKV} simultaneously. Other than the examples computed by the last author in \cite{Schaug} this is the first time we are aware that this particular a LG model has been considered in the literature. 
 
-\subsection{State Space isomorphism}
+\subsection{State Space isomorphism}\label{s:twistedstatespaceisom}
 In this section we will prove Theorem \ref{t:BViso}, which we restate here:
 \begin{thm}\label{t:thm1}\label{t:BViso}
 There is an isomorphism (the mirror map) $\sA_{W,\s{G}}\cong \sB_{W^T,\s{G^T}}$, which preserves the bi--degree. 
@@ -713,12 +713,26 @@ On the basis we have defined, the definition of the product is
 0 & \text{ otherwise} \\ \end{array}\right.
 \]
 
+To prove our second theorem (Theorem \ref{t:thm2}), we will use the following lemma. 
+
+\begin{lem}\label{lem:gamma_relations}
+\[
+\gamma_{g,h} = \left\{ 
+\begin{array}{ll}
+4 \gamma_{g, \sigma h} & \text{ if } g = (1/2, \alpha, 1/2, \beta),\ h = (1/2, \delta, 1/2, \nu)\\
+1/4 \gamma_{g, \sigma h} & \text{ if } g = (1/2, \alpha, 1/2, \beta),\ h = (0, \delta, 0, \nu)\\
+ \gamma_{g, \sigma h} & \text{ otherwise} \end{array}\right.
+\]
+\end{lem}
+The straightforward proof is left to the reader. 
+
 In \cite{FJJS}, it was shown that for LG models $(W,G)$ satisfying \autoref{property}, we have an isomorphism of Frobenius algebras
 \[
 \sA_{W,G}\cong \sB_{W^T,G^T}, 
 \]
 given by a rescaling of the Krawitz map. 
-The conditions are satisfied for a majority of cases---in particular for all polynomials with no chains (see \cite[Remark 1.1.1]{FJJS}). 
+The conditions are satisfied for a majority of cases---in particular for all polynomials with no chains (see \cite[Remark 1.1.1]{FJJS}).  
+
 
 
 \subsubsection{Proof of Theorem~\ref{t:Algiso}}We will now exploit this isomorphism to prove Theorem \ref{t:Algiso}. 
@@ -737,7 +751,7 @@ $\sB_{(\tw{W})^T,(\tw{G})^T}$ & &$\sB_{W^T,(\s{G})^T}$\\
 $\sA_{\tw{W},\tw{G}}$&\begin{tikzpicture} \draw[<-] (0,0) -- (1,0); \node at (.5,.25) {$tw_A$};\end{tikzpicture} &$\sA_{W, \s{G}}$ \\
 \end{tabular}\end{center}
 
-Using this description as a guide, we will define a map $\varphi:\sB_{W^T,(\s{G})^T} \to \sB_{W^T,\s{G^T}}$, which is closely related (but not equal) to the composition $tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1$ of the solid arrows in the diagram, each of which is a degree--preserving isomorphism of graded vector spaces.  We then show that $\varphi$ preserves products and pairings. The isomorphism of Theorem \ref{t:Algiso} is the composition $\varphi\circ\kappa_1^{-1}$.  
+Using this description as a guide, we will define a map $\varphi:\sB_{W^T,(\s{G})^T} \to \sB_{W^T,\s{G^T}}$, which is a rescaling of the composition $tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1$ of the solid arrows in the diagram, each of which is a degree--preserving isomorphism of graded vector spaces.  We then show that $\varphi$ preserves products and pairings. The isomorphism of Theorem \ref{t:Algiso} is the composition $\varphi\circ\kappa_1^{-1}$.  
 
 \begin{thm}\label{t:thm2}\label{t:Algiso}
 If $W$ and $\s G$ satisfy \autoref{property},
@@ -746,7 +760,7 @@ then $\sA_{W, \s{G}} \cong \sB_{W^T, \s (G^T)}$ as Frobenius algebras.
 \end{thm}
 
 \begin{rem}
-It is also worth noting that in the diagram, there are two \emph{different} B--models. This is related to the so--called multiple mirror phenomenon as mentioned in the Introduction. The B--model in the middle of the right-hand side is BHK mirror for $(W,\s{G})$. However, as we have seen, $\s{G^T}\neq (\s{G})^T$ and so the corresponding geometry does not fit the Borcea--Voisin construction. Because of the LG/CY correspondence, we expect a B--model whose corresponding geomoetry is Borcea--Voisin type, which is what the upper right--hand B--model is. Also, since we have two B models, both mirror to the same A-model, it should be expected that the two B model state spaces are isomorphic. 
+It is also worth noting that in the diagram, there are two \emph{different} B--models. This is related to the so--called multiple mirror phenomenon as mentioned in the Introduction. The B--model in the middle of the right-hand side is BHK mirror for $(W,\s{G})$. However, as we have seen, $\s{G^T}\neq (\s{G})^T$ and so the corresponding geometry does not fit the Borcea--Voisin construction. Because of the LG/CY correspondence, we expect a B--model whose corresponding geometry is Borcea--Voisin type, which is what the upper right--hand B--model is. Also, since we have two B models, both mirror to the same A-model, it should be expected that the two B model state spaces are isomorphic. 
 \end{rem}
 
 For the proof of Theorem \ref{t:Algiso}, we introduce the notation $\sB_1 = \sB_{W^T, (\s{G})^T}$ (the BHK mirror) and $\sB_2 = \sB_{W^T, \s{G^T}}$ (the BV mirror). 
@@ -810,16 +824,45 @@ Where $\epsilon =0$ if If $\jw_x$  acts with weight zero on $(n')_x$, and $\epsi
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As suggested by the composition $tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1$, the map $\varphi$ should have the following form for some nonzero constant $\kappa_{m,g}$: 
+It is straightforward to verify that for any $\fjrw{m}{g} \in \sB_1 $, where $g = (\epsilon/2, \alpha, \epsilon/2, \beta)$, $g' = (\alpha, \beta)$ and $m'$ is te same as $m$ except for the absence of the $dx_0 \wedge dy_0$ term (which may or may not be present in $m$). 
+\[ \kappa_2^{-1} \circ tw_A \circ \kappa_1 \left( \fjrw{m}{g}\right) = k_{m,g} \fjrw{m'}{g'},\]
+ for some constant $k_{m,g}$.  Thus, composing finally with  $tw_B^{-1}$, gives the following map: 
+\begin{equation}\label{algmap1}
+\begin{array}{c}
+tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1(\fjrw{m}{g})=\hspace*{6cm}\\ [2mm]
+\hspace*{3cm}\left\{ \begin{array}{ll}
+k_{{m},{g}}\fjrw{m'}{(1/2, \alpha, 1/2, \beta)} &  \text{ if }\jw_{x,B}\text{ acts with weight 0 on }m',\\
+k_{{m},{g}}\fjrw{m'dx_0 \wedge dy_0}{(0, \alpha, 0, \beta)} & \text{ otherwise}, \end{array}\right.
+ \end{array}
+ \end{equation}
+ where $\jw_{x,B}$ is the exponential grading operator associated with $f_1^T$. %We make the following two useful remarks to characterize whether $\fjrw{m}{g}\in \sB_{W^T,\s{G^T}}$. 
+%\begin{rem}\label{rem_wts_contain}
 
+Note that for $\fjrw{m}{g}\in \sB_1$,  $g$ is always an element of $\s{G^T}$, since $(\s{G})^T\subset \s{G^T}$. But $m$ may not be fixed by the action of all elements in the larger group.  We shall use $\tilde{m}$ to denote the monomial plus volume form which  differs from $m$ by the $dx_0\wedge dy_0$ volume form (if $m$ contains the term $dx_0\wedge dy_0$, then $\tilde{m}$ does not, and vice-versa). 
+Lemma \ref{l:allornothing} shows that exactly one of $\fjrw{m}{g}$ or $\fjrw{\tilde m}{\sigma g}$ is in $\sB_2$.  The following lemma further clarifies the map in \autoref{algmap1}.
+
+\begin{lem}
+Let $\fjrw{m}{g} \in \sB_1$, then 
 \[
-\varphi(\fjrw{m}{g})= \left\{ \begin{array}{ll}
-\kappa_{m,g}\fjrw{m}{g} &  \text{ if }\jw_x\text{ acts with weight 0 on }m_x,\\
- \kappa_{m,g}\fjrw{\tilde{m}}{\sigma{g}} & \text{ otherwise}, \end{array}\right.
+tw_B^{-1}\circ \kappa_2^{-1} \circ tw_A \circ \kappa_1(\fjrw{m}{g})= \left\{ \begin{array}{ll}
+k_{m,g}\fjrw{m}{g} &  \text{ if }\jw_{W_1^T}\text{ fixes }m,\\
+ k_{m,g}\fjrw{\tilde{m}}{\sigma{g}} & \text{ otherwise}. \end{array}\right.
  \]
-where $\tilde{m}$ differs from $m$ by the $dx_0\wedge dy_0$ volume form. That is to say. if $m$ has $dx_0\wedge dy_0$, then $\tilde{m}$ does not, and vice-versa. This is a degree preserving bijection between B--models.  
+Further, $\fjrw{m}{g} \in \sB_2$ exactly when $\jw_{W_1^T}$ fixes $m$. 
+\end{lem} 
 
-All that remains is to give the constants $\kappa_{m,g}$, which we do as follows: 
+\begin{proof}
+Suppose that $\jw_{W_1^T}$ fixes $m$.  If, also, $\jw_{x,B}$ fixes $m$, then we know that $m = m_x m_y$ and $g = (1/2, \alpha, 1/2, \beta)$ for some $\alpha$ and $\beta$.  In this case $tw_B(\fjrw{m'}{g'}) = \fjrw{m}{g}$, as desired. If, instead $\jw_{x, B}$ acts with weight 1/2 on $m_x$, then it must be that $m = m_x m_y dx_0 \wedge dy_0$ and $g = (0, \alpha, 0, \beta)$.  Again, this yields $tw_B(\fjrw{m'}{g'}) = \fjrw{m}{g}$.
+
+If $\jw_{W_1^T}$ doesn't fix $m$, a similar analysis of the cases where $\jw_{x,B}$ fixes/doesn't fix $m$ shows that $tw_B(\fjrw{m'}{g'}) = \fjrw{\tilde m}{\sigma g}$ in both cases. 
+\end{proof}
+
+ 
+  If $\varphi$ is a rescaling of the map above then it will be a degree preserving bijection between B--models.  It remains to define a rescaling and demonstrate that it will preserve products and pairings, which we do as follows: 
+
+
+
+
 \[
 \varphi(\fjrw{m}{g}) = \left\{ \begin{array}{ll} \fjrw{m}{g} & \text{if } \fjrw{m}{g} \in \sB_{W^T, \s{G^T}} \\ 
 \tfrac 12 \fjrw{\tilde m}{\sigma g} & \text{if } \fjrw{m}{g} \notin \sB_{W^T, \s{G^T}}, g = (0, \alpha, 0, \beta) \\ 
@@ -827,15 +870,12 @@ All that remains is to give the constants $\kappa_{m,g}$, which we do as follows
 \end{array}\right.
 \]
 
-In other words, $\kappa_{m,g} =1$ if $ \fjrw{m}{g} \in \sB_{W^T, \s{G^T}}$ and $\kappa_{m,g}\in \{1/2,2\}$ otherwise. Since the dependence on $m$ only determines if $\kappa_{m,g}=1$ or not, we can henceforth drop the subscript $g$ with no confusion, i.e. $\kappa_g=\kappa_{m,g}$. 
+%In other words, $\kappa_{m,g} =1$ if $ \fjrw{m}{g} \in \sB_{W^T, \s{G^T}}$ and $\kappa_{m,g}\in \{1/2,2\}$ otherwise. 
+%Since $m$ only determines if $\kappa_{m,g}=1$ or not, we can henceforth drop the subscript $g$ with no confusion, i.e. $\kappa_g=\kappa_{m,g}$. 
 
-We make the following two useful remarks to characterize whether $\fjrw{m}{g}\in \sB_{W^T,\s{G^T}}$. 
-%\begin{rem}\label{rem_wts_contain}
-For $\fjrw{m}{g}\in \sB_1$, we see that $g$ is always an element of $\s{G^T}$, since $(\s{G})^T\subset \s{G^T}$. But $m$ may not be fixed by the action of all elements in the larger group. One can show that $\jw_{W_1^T}$ fixing $m_x$ is equivalent to saying that $\fjrw{m}{g} \in \sB_2=\sB_{W^T, \s{G^T}}$. Recall that $J_{W_1^T}\times J_{W_2^T}\subset \s{G^T}$. \nathan{Amanda wanted to fix this part up a bit, and check the computations. The computations are still in code prior to this discussion.}
-%\end{rem}
 
 %\begin{rem}\label{rem_action}
-Notice that if $\fjrw{m}{g}$ and $\fjrw{n}{h}$ are elements in $\sB_1$, and $m_x$ and $n_x$ are fixed by $\jw_x$ in $\sB_2$, then $(mn)_x$ is also fixed. On the other hand, if the action on both $m_x$ and $n_x$ is with weight 1/2, then $(mn)_x$ is fixed.  Only if one is fixed, and the action on the other is with weight $1/2$ and the action on the product is with weight $1/2$. 
+Notice that if $\fjrw{m}{g}$ and $\fjrw{n}{h}$ are elements in $\sB_1$ with $I_g \cup I_h \cup I_{gh} = \{x_0, \ldots, x_m, y_0 \ldots y_n\}$ and both are elements of $\sB_2$, then $\fjrw{mn}{gh}$  must also be an element of $\sB_2$. Also, if neither is an element of $\sB_2$, then $\fjrw{mn}{gh}$ is an element of $\sB_2$ (Since $\fjrw{\tilde m}{\sigma g}$ and $\fjrw{\tilde n}{\sigma h}$ are in $\sB_2$ and thus their product must be).  Only if one  of  $\fjrw{m}{g}$ and $\fjrw{n}{h}$ is in $\sB_2$ and the other is not, do we find that $\fjrw{mn}{gh} \notin \sB_2$. 
 %\end{rem}
 
 \begin{lem} The map $\varphi$ preserves products.
@@ -857,20 +897,21 @@ Based on the definition of $\varphi$, there are several cases to check.
 and $\sB_2$. Based on the previous remarks, $\fjrw{mn}{gh}$ is in both as well, and so 
 \[
 \begin{array}{l}
-\varphi(\fjrw{m}{g} \star_1 \fjrw{n}{h}) = \varphi( \gamma_{g,h} \fjrw{mn}{gh}) = \gamma_{g,h} \fjrw{mn}{gh} \\
+\varphi(\fjrw{m}{g} \star_{\sB_1} \fjrw{n}{h}) = \varphi( \gamma_{g,h} \fjrw{mn}{gh}) = \gamma_{g,h} \fjrw{mn}{gh} \\
 =
-\fjrw{m}{g} \star_2 \fjrw{n}{h}=\varphi(\fjrw{m}{g}) \star_2 \varphi(\fjrw{n}{h})
+\fjrw{m}{g} \star_{\sB_2} \fjrw{n}{h}=\varphi(\fjrw{m}{g}) \star_{\sB_2} \varphi(\fjrw{n}{h})
 \end{array}
 \]
 
 \noindent \textbf{Case B:} Next, suppose that $\fjrw{m}{g}$ and $\fjrw{n}{h}$ are each elements of $\sB_1$, but neither are elements of $\sB_2$.   
 Notice that in this case 
 \[
-\varphi(\fjrw{m}{g}) \star_2 \varphi(\fjrw{ n}{ h})=k_g\fjrw{\tilde m}{\sigma g} \star_2 k_h\fjrw{\tilde n}{\sigma h} = k_gk_h\gamma_{\sigma g, \sigma h} \fjrw{mn}{ gh},
+\varphi(\fjrw{m}{g}) \star_{\sB_2} \varphi(\fjrw{ n}{ h})=k_g\fjrw{\tilde m}{\sigma g} \star_{\sB_2} k_h\fjrw{\tilde n}{\sigma h} = k_gk_h\gamma_{\sigma g, \sigma h} \fjrw{mn}{ gh},
 \]
-since $\sigma g \sigma h = gh$.  Further, $\varphi( \fjrw{mn}{ gh}) = \fjrw{mn}{ gh}$, by Remark \ref{rem_action}. Thus, to verify that  
+since $\sigma g \sigma h = gh$.  %Further, $\varphi( \fjrw{mn}{ gh}) = \fjrw{mn}{ gh}$, by Remark \ref{rem_action}. 
+Thus, to verify that  
 $
-\varphi(\fjrw{m}{ g}) \star_2  \varphi( \fjrw{n}{ h}) =\varphi(\fjrw{m}{ g} \star_1   \fjrw{n}{ h})$, % =  \varphi(\gamma_{ g, h} \fjrw{mn}{ gh})\\
+\varphi(\fjrw{m}{ g}) \star_{\sB_2}  \varphi( \fjrw{n}{ h}) =\varphi(\fjrw{m}{ g} \star_{\sB_1}   \fjrw{n}{ h})$, % =  \varphi(\gamma_{ g, h} \fjrw{mn}{ gh})\\
 %\fjrw{\tilde m}{\sigma g} \star_2 \fjrw{\tilde n}{\sigma h} = 
 we only need to check that 
 \[
@@ -894,11 +935,12 @@ $I_{\sigma g} \cup I_{\sigma h} \cup I_{gh} = \{x_0, \ldots, x_m,y_0,\ldots,y_n\
 We verify the details of the preservation of the product in only the first case; the others follow by similar arguments. 
 \begin{enumerate}
 \item  $g$ and $h$ are both of the form $(0, \alpha, 0, \beta)$. \\
-Here, $k_g = k_h = 1/2$. Suppose that $I_g \cup I_h \cup I_{gh} = \{x_0, \ldots, x_m,y_0,\ldots,y_n\}$. Then, 
+Here, $k_g = k_h = 1/2$. Suppose that $I_g \cup I_h \cup I_{gh} = \{x_0, \ldots, x_m,y_0,\ldots,y_n\}$. 
+Lemma \autoref{lem:gamma_relations} gives 
 \[
-\gamma_{g,h}  =
-\frac{\Hess (W_{gh})\mu_{g \cap h}}{\Hess (W_{g\cap h})\mu_{gh}} 
-=\frac{\Hess (W_{gh})\mu_{\sigma g \cap \sigma h}}{4\Hess (W_{\Fix(\sigma g)\cap \Fix(\sigma h)})\mu_{gh}} 
+\gamma_{g,h}  = \gamma_{g,\sigma h} 
+%\frac{\Hess (W_{gh})\mu_{g \cap h}}{\Hess (W_{g\cap h})\mu_{gh}} 
+%=\frac{\Hess (W_{gh})\mu_{\sigma g \cap \sigma h}}{4\Hess (W_{\sigma g\cap \sigma h})\mu_{gh}} 
 =\tfrac 14  \gamma_{\sigma g,\sigma h}
 \]
 
@@ -935,11 +977,11 @@ So, we have, $k_gk_h\gamma_{\sigma g, \sigma h} = 2 \cdot 1/2 \cdot \gamma_{\sig
 
 \noindent \textbf{Case C:} Finally, we must consider the case when $\fjrw{m}{g}, \fjrw{n}{h}$ are both elements of $\sB_1$, but only one of them is an element of $\sB_2$.  Without loss of generality, we say $\fjrw{m}{g} \in \sB_2$.  Notice that in this case
 \[
-\varphi(\fjrw{m}{g} \star_{\sB_1} \fjrw{n}{h}) = \varphi(\gamma_{g,h} \fjrw{mn}{gh}) = \gamma_{g,h}k_{gh} \fjrw{mn} {\sigma gh},
+\varphi(\fjrw{m}{g} \star_{\sB_1} \fjrw{n}{h}) = \varphi(\gamma_{g,h} \fjrw{mn}{gh}) = \gamma_{g,h}k_{gh} \fjrw{\widetilde{mn}} {\sigma gh},
 \]
-by Remark \ref{rem_action}. Additionally, 
+and, 
 \[
-\varphi(\fjrw{m}{g}) \star_{\sB_2} \varphi(\fjrw{n}{h}) = \fjrw{m}{g} \star_{\sB_2} k_h \fjrw{n}{\sigma h} = \gamma_{g,\sigma h}k_{h} \fjrw{mn} {\sigma gh}.
+\varphi(\fjrw{m}{g}) \star_{\sB_2} \varphi(\fjrw{n}{h}) = \fjrw{m}{g} \star_{\sB_2} k_h \fjrw{\tilde n}{\sigma h} = \gamma_{g,\sigma h}k_{h} \fjrw{\widetilde{mn}} {\sigma gh}.
 \]
 We must prove $\gamma_{g,h}k_{gh} \fjrw{mn} {\sigma gh} =\gamma_{g,\sigma h}k_{h} \fjrw{mn} {\sigma gh}$ in  the following  four cases: 
 \begin{enumerate}
@@ -951,13 +993,13 @@ We must prove $\gamma_{g,h}k_{gh} \fjrw{mn} {\sigma gh} =\gamma_{g,\sigma h}k_{h
 
 Again, we verify the preservation of the product in the first case only; the others follow similarly. 
 \begin{enumerate}
-\item $g$ and $h$ are both of the form $(0, \alpha, 0, \beta)$ ($k_h =k_{gh}= 1/2$)\\
-\[
-\gamma_{g,h}  =
-\frac{\Hess (W_{gh})\mu_{g \cap h}}{\Hess (W_{g\cap h})\mu_{gh}} 
-=\frac{4 \Hess (W_{\sigma gh})\mu_{ g \cap \sigma h}}{4\Hess (W_{\Fix( g)\cap \Fix(\sigma h)})\mu_{\sigma gh}} 
-=  \gamma_{g,\sigma h}
-\]
+\item $g$ and $h$ are both of the form $(0, \alpha, 0, \beta)$ ($k_h =k_{gh}= 1/2$).  From Lemma \ref{lem:gamma_relations}, 
+$
+\gamma_{g,h}  %=
+%\frac{\Hess (W_{gh})\mu_{g \cap h}}{\Hess (W_{g\cap h})\mu_{gh}} 
+%=\frac{4 \Hess (W_{\sigma gh})\mu_{ g \cap \sigma h}}{4\Hess (W_{\Fix( g)\cap \Fix(\sigma h)})\mu_{\sigma gh}} 
+=  \gamma_{g,\sigma h}.
+$
 So, 
 $k_{gh}\gamma_{g,h} = \tfrac 12 \gamma_{g,h} = \tfrac 12 \gamma_{g,\sigma h} = k_{h}\gamma_{g,\sigma h}$, as desired. 
 \iffalse
@@ -1001,7 +1043,7 @@ $k_{gh}\gamma_{g,h} = 2 \gamma_{g,h} = 1/2\gamma_{g,\sigma h} = k_{h}\gamma_{g,\
 \end{proof}
 
 \begin{rem}
-Recall that the for an element $\fjrw{m}{g}$ from an LG state space, $m$ represents a monomial together with a volume form.  In the following proof, we are sometimes interested in only the monomial portion of $m$ (which by abuse of notation, we will call $m$).  Further, we point out that the monomial portion of both $m$ and $\tilde{m}$ are the same. 
+Recall that for an element $\fjrw{m}{g}$ from an LG state space, $m$ represents a monomial together with a volume form.  In the following proof, we are sometimes interested in only the monomial portion of $m$ (which by abuse of notation, we will call $m$).  Further, we point out that the monomial portion of both $m$ and $\tilde{m}$ are the same. 
 \end{rem}
 
 \begin{lem}The map $\varphi$ preserves the pairing. 
@@ -1023,9 +1065,9 @@ m \cdot n = \frac{\langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1}}{\mu_g} 
 \]
 Thus, for $\varphi(\fjrw{m}{g}) = \tfrac 12 \fjrw{\tilde m}{\sigma g}$, and  $\varphi(\fjrw{n}{g^{-1}}) = \tfrac 12 \fjrw{\tilde n}{\sigma g^{-1}}$
 \[
- \tfrac 12 m \cdot \tfrac 12 n   = \frac{\langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1}}{\mu_{\sigma g}}  \Hess(W_{\sigma g}). 
+ \tfrac 12 m \cdot \tfrac 12 n   = \frac{\langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1}}{\mu_{\sigma g}}  \Hess(W_{\sigma g}),
 \]
-So, $ \langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1} = \langle \varphi(\fjrw{m}{g}), \varphi(\fjrw{n}{g^{-1}}) \rangle_{\sB_2}$.
+and $ \langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1} = \langle \varphi(\fjrw{m}{g}), \varphi(\fjrw{n}{g^{-1}}) \rangle_{\sB_2}$.
 
 \item $g$ is of the form $(1/2, \alpha, 1/2, \beta)$. \\
 \[
@@ -1038,11 +1080,11 @@ Thus, for $\varphi(\fjrw{m}{g}) = 2\fjrw{\tilde m}{\sigma g}$, and  $\varphi(\fj
 So, $ \langle \fjrw{m}{g}, \fjrw{n}{g^{-1}} \rangle_{\sB_1} = \langle \varphi(\fjrw{m}{g}), \varphi(\fjrw{n}{g^{-1}}) \rangle_{\sB_2}$.
 \end{enumerate}
 
-Note that if $\fjrw{m}{g}$ is in $\sB_2$ but  $\fjrw{n}{g^{-1}}$ is not, then $\langle\fjrw{m}{g},\fjrw{n}{g^{-1}}\rangle=0$, since the $\jw_x$ acts with weight zero on the Hessian. Thus, we have verified that $\varphi$ preserves both the product and the pairing, and therefore, the composition, $\varphi \circ \kappa_1^{-1}$ is an isomorphism of Frobenius algebras. (When Property $\star$ of \cite{FJJS} is satisfied). 
+Note that if $\fjrw{m}{g}$ is in $\sB_2$ but  $\fjrw{n}{g^{-1}}$ is not, then $\langle\fjrw{m}{g},\fjrw{n}{g^{-1}}\rangle=0$, since the $\jw_x$ acts with weight zero on the Hessian. 
 
 \end{proof}
 
-
+We have verified that $\varphi$ preserves both the product and the pairing, and therefore, the composition, $\varphi \circ \kappa_1^{-1}$ is an isomorphism of Frobenius algebras when \autoref{property} is satisfied. 
 
 %We also need to show that the change of degrees is the same on the top as on the bottom. This would finish the proof of the theorem. 
 
@@ -1057,7 +1099,7 @@ In Section~\ref{ss:LGCYstatespace} we will describe the LG/CY state space isomor
 \subsection{Gauged linear sigma models}\label{ss:GLSM}
 We include this section, in order to demonstrate why the LG model described in Section~\ref{ss:BVLGmodel} has the particular form we have described there. None of the ideas presented in this section will be used in any later proofs. 
 
-The LG/CY correspondence is part of a larger idea due to Ed Witten, in which he considers each theory in the correpondence (e.g. GW theory or FJRW theory) as different ``phases'' of some larger theory called the \emph{gauged linear sigma model} (GLSM) that depends on a parameter. Variation of this parameter will then produce the various theories involved in the LG/CY correspondence. The different phases of the GLSM are conjectured to be equivalent to each other in some certain sense. The first evidence of this equivalence is an isomorphism of the respective state spaces in each phase. 
+The LG/CY correspondence is part of a larger idea due to Ed Witten, in which he considers each theory in the correpondence (e.g. GW theory or FJRW theory) as different ``phases'' of some larger theory called the \emph{gauged linear sigma model} (GLSM) that depends on a parameter. Variation of this parameter will then produce the various theories involved in the LG/CY correspondence. The different phases of the GLSM are conjectured to be equivalent to each other in some sense. The first evidence of this equivalence is an isomorphism of the respective state spaces in each phase. 
 
 These ideas have recently been mathematically formalised by Fan--Jarvis--Ruan in \cite{FJR15} and we begin this section by briefly describing their construction. We are intentionally vague about some aspects of this construction, since they are not necessary for our purposes. In this article, we are primarily interested in the state spaces, so we will focus our attention there. 
 
@@ -1083,7 +1125,7 @@ A GLSM depends on a choice of (1) a finite dimensional vector space $V$ over $\C
 If we vary the character $\theta$, we get a different GIT quotient, and therefore a different theory. We can vary the character in the so--called phase space. This space of characters is partitioned into various chambers. Varying the character within a chamber, does not change the theory. However, if we cross into a different chamber, we obtain a different theory. 
 
 The idea behind the LG/CY correspondence is that if we choose the character $\theta$ in a certain chamber, we obtain GW theory of a particular orbifold, whereas if we choose the character in different chamber, we should expect to obtain FJRW theory. 
-The moduli space, virtual cycle and numerical invariants from the GLSM will give rise to such structures for Gromov--Witten theory and for FJRW theory. It has conjectured that these structures will agree in some sense  for both theories, but as mentioned we will focus our attention on the state spaces. 
+The moduli space, virtual cycle and numerical invariants from the GLSM will give rise to such structures for Gromov--Witten theory and for FJRW theory. It has been conjectured that these structures will agree for both theories, but as mentioned we will focus our attention on the state spaces. 
 
 %\nathan{We could actually drop the definition of the state spaces here, if we don't want to mess with the Thom isomorphism.} 
 %In order to define the state space, we define for each conjugacy classes $\Psi$ of $G$ for which the fixed locus $\cX_{\theta,\Psi}$ of $\theta$ is non--empty the vector space
@@ -1120,9 +1162,9 @@ We consider the Hamiltonian action of $H$ on $V$, which has moment map $\mu:V\to
 \]
 The set of critical values for this moment map is $\set{\tau_1=0}\cup\set{\tau_2=0}\subset \RR^2$.
 
-The conditions for the appropriate GIT quotients translate to the requirement of having a regular value of the moment map in the symplectic setting. Once we have our regular values we can return the the algebraic setting to describe the GIT quotients.  Notice the set of critical values divides $\RR^2$ into 4 chambers. Each regular value withing a given chamber will yield an isomorphic GIT quotient. 
+The conditions for the appropriate GIT quotients translate to the requirement of having a regular value of the moment map in the symplectic setting. Once we have our regular values we can return the the algebraic setting to describe the GIT quotients.  Notice the set of critical values divides $\RR^2$ into 4 chambers. Each regular value within a given chamber will yield an isomorphic GIT quotient. 
 
-A the derivation of a character defines a weight in the Lie algebra $\RR^2$. We will now discuss the two chambers which yield GW theory and FJRW theory. We  will first describe the regular values which yield the relevant characters. Then we will return the the GIT perspective, and describe the unstable locus and the corresponding GIT quotient for each character which has derivation in the given chamber. 
+A derivation of a character defines a weight in the Lie algebra $\RR^2$. We will now discuss the two chambers which yield GW theory and FJRW theory. First we describe the regular values which yield the relevant characters; then we return the the GIT perspective, and describe the unstable locus and the corresponding GIT quotient for each character which has derivation in the given chamber. 
 
 %In order to describe the two relevant GIT quotients, we use the method of symplectic reduction, which as can be shown yields a quotient isomorphic to the GIT quotient (cf. e.g. \cite{FJR13}). In general, given a symplectic manifold $M$ endowed with a Poisson action of a connected Lie group $\cG$ (that is, an action which sets up a skew--product isomorphism between $C^{\infty}(M)$ and the corresponding Lie algebra $\mathfrak{g}$), one may consider the \textit{moment map} $\mu:M \to \mathfrak{g}^*$. % given by $\mu: p \mapsto \mu_X(m)$. 
 %Then we define $M//\cG := \mu^{-1}(x)/\cG$ for a regular value $x\in \mathfrak{g}^*$. Here $x$ being a regular value corresponds to taking a character $\theta$ satisfying the semisimplicity condition defined earlier. %This GIT quotient is then endowed with a unique symplectic form induced from the projection from $M_0$ to $\tilde{M}$ and the inclusion map $M_0 \hookrightarrow M$. %\nathan{Add a quick description of symplectic reduction.} \andrew{Very quick. Suffices?} 
@@ -1205,7 +1247,7 @@ We now decompose $\s{G}$ into $2M=2|G|/(d_1d_2)$ cosets of $J$. We denote by $\c
 
 Now we can write degree $(p,q)$ part of the state space as a sum over these cosets. Using \eqref{e:fjrwstatespacereview} and \eqref{e:fjrwtensor} this becomes
 \begin{equation}\label{e:FJRWdecomposition}
-\sA_{W,G}^{p,q}=\bigoplus_{g\in \cC}\bigoplus_{\substack{h_1+h_2=p\\k_1+k_2=q}}\left[\left(\bigoplus_{k=1}^{d_1}\sQ_{g_1\jw_1^k}^{h_1,k_1}\right)^{J_1}\otimes\left(\bigoplus_{k=1}^{d_2}\sQ_{g_2\jw_2^k}^{h_2,k_2}\right)^{J_2}\right]^{\s{G}}    
+\sA_{W,G}^{p,q}=\bigoplus_{g\in \cC}\bigoplus_{\substack{h_1+h_2=p\\k_1+k_2=q}}\left[\left(\bigoplus_{k=1}^{d_1}\sQ_{g_1\jw_1^k}^{h_1,k_1}\right)^{J_1}\otimes\left(\bigoplus_{k=1}^{d_2}\sQ_{g_2\jw_2^k}^{h_2,k_2}\right)^{J_2}\right]^{\s{G}}.    
 \end{equation}
 
 Recall that $\jw_i$ is the generator of $J_i$ and for $i=1,2$. Notice we have taken $J_1$ and $J_2$ invariants in each of the factors of the tensor product in the second line. We do this simiply to make the isomorphism more clear. 
@@ -1217,7 +1259,7 @@ The Chen--Ruan cohomology is slightly more subtle. On the Calabi--Yau side, the 
 H^*_{CR}\Big(\left[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}\right]\Big).
 \]
 
-The \emph{Chen--Ruan orbifold cohomology} is defined via the \emph{inertia orbifold} (see \cite{ChenR1}).
+The \emph{Chen--Ruan orbifold cohomology} is defined via the \emph{inertia orbifold} (see \cite{ChR}).
 If $\cX = [X/H]$ is a global quotient of a nonsingular
 variety $X$ by a finite group $H$, the inertia orbifold $I\cX$ takes a particularly simple form.
 Let $S_H$ denote the set of conjugacy classes $(h)$ in $H$,
@@ -1257,7 +1299,7 @@ Notice that, since $\s{G}\cap T^2=J$, we have $\s{G}T^2/T^2\cong \widetilde{\s{G
 The Chen--Ruan cohomolgy can therefore be written as %a direct sum over $g\in\s{G}T^2$, and the summands are the ordinary cohomology of the fixed locus of $g$ with a degree shift (see e.g. \cite{}[Priddis--Shoemaker]). 
 %Thus we can write [ADD something about the degree shift]
 \begin{equation}\label{e:CRdirectsum}
-H^{p,q}_{CR}\Big(\left[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}\right]\Big)=\bigoplus_{g\in\s{G}T^2}H^{p-a(g),q-a(g)}((V_{W_1}\times V_{W_2})_{g}/\s{G}T^2;\CC)
+H^{p,q}_{CR}\Big(\left[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}\right]\Big)=\bigoplus_{g\in\s{G}T^2}H^{p-a(g),q-a(g)}((V_{W_1}\times V_{W_2})_{g}/\s{G}T^2;\CC).
 \end{equation}
 Here $a(g)$ denotes the age shift mentioned earlier. To define this we look at the action of $g$ on the tangent space at a given point. The action can be diagonalized in a suitable basis as
 \[
@@ -1291,16 +1333,16 @@ So for a fixed $g\in \s{G}T^2$, we can write the cohomology as
 \begin{align*}
 H^{p-a(g),q-a(g)}&(V_{W_1,g_1}\times V_{W_2,g_2}/\s{G}T^2;\CC) = H^{p-a(g),q-a(g)}(X_{W_1,g_1}\times X_{W_2,g_2}/\widetilde{\s{G}};\CC)\\
 	&\qquad\qquad\qquad\qquad\qquad\qquad=H^{p-a(g),q-a(g)}(X_{W_1,g_1}\times X_{W_2,g_2};\CC)^{\widetilde{\s{G}}}\\
-	&=\bigoplus_{\substack{h_1+h_2=p\\ k_1+h_2=q}}\left(H^{h_1-a(g_1),k_1-a(g_1)}(X_{W_1,g_1};\CC)\otimes H^{h_2-a(g_2),k_2-a(g_2)}(X_{W_2,g_2};\CC)\right)^{\widetilde{\s{G}}}
+	&=\bigoplus_{\substack{h_1+h_2=p\\ k_1+h_2=q}}\left(H^{h_1-a(g_1),k_1-a(g_1)}(X_{W_1,g_1};\CC)\otimes H^{h_2-a(g_2),k_2-a(g_2)}(X_{W_2,g_2};\CC)\right)^{\widetilde{\s{G}}}.
 \end{align*}
 
 Notice that the summand corresponding to $g$ in Equation~\eqref{e:CRdirectsum} is empty if $(V_{W_1}\times V_{W_2})_{g}$ is empty. As with FJRW theory, we will rewrite this sum as a sum over cosets. To this end, if we write $g_1=(g_{10},g_{11}, \dots, g_{1n})\in G_{W_1}$ and $g_2=(g_{20}, \dots, g_{2m})$ we can define 
 \[
 \Lambda^1_{g}=\bigcup_{k=0}^n\set{\lambda\in \CC^*\mid\lambda^{-w_k}=g_{1k}}.
 \] 
-This set denote the complex numbers $\lambda\in \CC^*$ so that $g_1\lambda$ has non-trivial fixed locus. The set $\Lambda^2_{g}$ is defined similarly. 
+This set denotes the complex numbers $\lambda\in \CC^*$ where $g_1\lambda$ has non-trivial fixed locus. The set $\Lambda^2_{g}$ is defined similarly. 
 
-Notice in this description, since the tangent space of a product is the product of the respective tangent spaces, we have $a(g)=a(g_1)+a(g_2)$. So the degree shift agrees on both sides of the equation. In other words, we can think of the summands as tensor product of factors of some Chen--Ruan cohomology. 
+Notice that in this description, since the tangent space of a product is the product of the respective tangent spaces, we have $a(g)=a(g_1)+a(g_2)$. So the degree shift agrees on both sides of the equation. In other words, we can think of the summands as tensor product of factors of some Chen--Ruan cohomology. 
 
 %\begin{align*}
 %	H_{CR}^{p,q}&=\bigoplus_{\gamma\in \s{G}(\CC^*)^2} H^{p-a(\gamma),q-a(\gamma)}(\left[{W=0}_\gamma/\widetilde{\s{G}(\CC^*)^2}\right])\\
@@ -1308,7 +1350,7 @@ Notice in this description, since the tangent space of a product is the product 
 %\end{align*}
 
 
-As in the FJRW state space, we can choose $2M$ cosets of $T^2$, using the exact same set $\cC$ of coset representatives as before. We can write the Chen--Ruan cohomology as 
+As in the FJRW state space, we can choose $2M$ cosets of $T^2$, using the same set $\cC$ of coset representatives as before. We can then write the Chen--Ruan cohomology as 
 \begin{align}
 H_{CR}^{p,q}&([X_{W_1}\times X_{W_2}/\s{G}];\CC)=\nonumber\\
 	&\bigoplus_{g\in \cC}\bigoplus_{\substack{h_1+h_2=p\\k_1+k_2=q}}\left[\left(\bigoplus_{\lambda\in \Lambda^1_{g}}H^{h_1,k_1}(X_{W_1,g\lambda};\CC)\right)\otimes\left(\bigoplus_{\lambda\in \Lambda^2_{g}}H^{h_2,k_2}(X_{W_2,g\lambda};\CC)\right)\right]^{\s{G}}.\label{e:CRdecomposition}
@@ -1381,12 +1423,12 @@ Their method of proof uses what they call 1/2-Calabi--Yau manifolds. In this sec
 %In order to apply their result, we need a group $G$ that is a direct product $G=G_1\times G_2$, with each direct summand in the respective maximal symmetry groups of $W_1$ and $W_2$. 
 If we relax the condition on $G$, we no longer obtain Borcea--Voisin orbifolds, as we have seen previously, but as we see from the BVLG mirror symmetry, we expect mirror symmetry to hold nonetheless. We describe this isomorphism now. 
 
-From section \ref{e:BVLGABmodeliso} we have 
+From Section \ref{e:BVLGABmodeliso} we have 
 \[
 \sA_{W,\s{G}}^{p,q}\cong \sB_{W^T,\s{G^T}}^{p,q}.
 \]
 
-On the other hand, from the previous section (LG/CY state space isomorphism), we have 
+On the other hand, from Section \ref{ss:LGCYstatespace}, we have 
 \[
 \sA_{W,\s{G}}^{p,q}\cong H^{p,q}_{CR}(X_{W_1}\times X_{W_2}/\widetilde{\s{G}};\CC). 
 \]
@@ -1402,9 +1444,9 @@ In case $n=2$, $m=3$ and $G=G_1\times G_2$ is a product of groups $G_1\subset G_
 
 
 \subsection{The twisting map}\label{ss:twistmap}
-Now we have established the state space isomorphism, we turn our attention to the twist map of Borcea \cite{Borcea} and Artebani--Boisi\'erre--Sarti \cite{ABS}. Geometrically, the twist map relates the orbifold $[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}]$ to a hypersurface in a quotient of weighted projective space. What follows is an instance when the LG side of the LG/CY corresondence informs the CY geometry. 
+Now we have established the state space isomorphism, we turn our attention to the twist map of Borcea \cite{Borcea} and Artebani--Boisi\'erre--Sarti \cite{ABS}. Geometrically, the twist map relates the orbifold $[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}]$ to a hypersurface in a quotient of weighted projective space. What follows is an instance where the LG side of the LG/CY corresondence informs the CY geometry. 
 
-In \cite{ABS} the authors describe the twist map for those pairs of polynomials $W_1$, $W_2$ with the property that $\gcd(u_0,v_0)=1$. As mentioned before, there are 44 of the 95 weight systems for K3 surfaces that admit such a polynomial, and two weight systems for an elliptic curve. Thus we have 88 total combinations. The restriction $\gcd(u_0,v_0)=1$ limits us to 48 of these combinations. However, as mentioned in section \ref{sec:twist}, the LG/CY correspondence allows us to understand the twist map more clearly. For example, the restriction on gcd's can be lifted so that the twisting map is valid for all choices of polynomials that have form \eqref{e:wxwy}, as soon as we understand the group $\tw{G}$. 
+In \cite{ABS} the authors describe the twist map for those pairs of polynomials $W_1$, $W_2$ with the property that $\gcd(u_0,v_0)=1$. As mentioned before, there are 44 of the 95 weight systems for K3 surfaces that admit such a polynomial, and two weight systems for an elliptic curve. Thus we have 88 total combinations. The restriction $\gcd(u_0,v_0)=1$ limits us to 48 of these combinations. However, as mentioned in Section \ref{sec:twist}, the LG/CY correspondence allows us to understand the twist map more clearly. For example, the restriction on gcd's can be lifted so that the twisting map is valid for all choices of polynomials that have form \eqref{e:wxwy}, as soon as we understand the group $\tw{G}$. 
 
 In order to define the twist map, let $\delta=\gcd(u_0,v_0)$. We define $s_0$ and $t_0$ via the equations $s_0u_0+\delta\equiv 0\pmod {v_0}$ and $t_0v_0+\delta\equiv 0\pmod {u_0}$. Let $\sigma$ be the involution on $\mathbb{P}(u_1, \ldots, u_m) \times \mathbb{P}(v_0, v_1, \ldots, v_n)$ given by $(x_0, y_0) \mapsto (-x_0, -y_0),$ 
 Finally, define 
@@ -1419,11 +1461,11 @@ Recall that the LG twist map relates the LG model $(W_1+W_2,\s{G})$ to the LG mo
 %Define the map 
 \begin{align*}
 \tilde{\tau}: & \mathbb{P}(u_0, u_1, \ldots, u_m) \times \mathbb{P}(v_0, v_1, \ldots, v_n) %/\langle \sigma \rangle \\ 
-& \to [\mathbb{P}(\frac{v_0}{\delta}u_1, \ldots, \frac{v_0}{\delta} u_m, \frac{u_0}{\delta}v_1, \ldots, \frac{u_0}{\delta}v_n)/\widetilde{\tw{G}}]
+\ \to \ \left[\mathbb{P}\left(\frac{v_0}{\delta}u_1, \ldots, \frac{v_0}{\delta} u_m, \frac{u_0}{\delta}v_1, \ldots, \frac{u_0}{\delta}v_n\right)/\widetilde{\tw{G}}\right]
 \end{align*} 
 by 
 \begin{align*}
-((x_0, x_1, \ldots, x_n), (y_0, y_1, \ldots, y_m)) \mapsto ((x_0^{s_0}y_0^t)^{\frac{u_1}{\delta}}, \ldots, (x_0^{s_0}y_0^t)^{\frac{u_m}{\delta}}, (x_0^sy_0^{t_0})^{\frac{v_1}{\delta}}, \ldots, (x_0^sy_0^{t_0})^{\frac{v_n}{\delta}}).
+((x_0, x_1, \ldots, x_n), (y_0, y_1, \ldots, y_m)) \mapsto \left(\left(x_0^{s_0}y_0^t\right)^{\frac{u_1}{\delta}}x_1, \ldots, \left(x_0^{s_0}y_0^t\right)^{\frac{u_m}{\delta}}x_m, \left(x_0^sy_0^{t_0}\right)^{\frac{v_1}{\delta}}y_1, \ldots, \left(x_0^sy_0^{t_0}\right)^{\frac{v_n}{\delta}}y_m\right).
 \end{align*} 
 
 This map depends on a choice of $\delta$-th root of unity, and on the choice of $s_0$ and $t_0$. However, one can check that with a different choice of any of these, the image differs exactly by the action of an element of $\tw{(J_1\times J_2)}$. Since the image lands in the quotient by $\tw{G}$, the map is well-defined.
@@ -1431,7 +1473,7 @@ This map depends on a choice of $\delta$-th root of unity, and on the choice of 
 
 Furthermore, the image written above is equivalent to 
 \[
-((\frac{y_0}{x_0})^{\frac{u_1}{u_0}}x_1, \ldots, (\frac{y_0}{x_0})^{\frac{u_m}{u_0}}x_m, y_1, \ldots, y_n).
+\left(\left(\frac{y_0}{x_0}\right)^{\frac{u_1}{u_0}}x_1, \ldots, \left(\frac{y_0}{x_0}\right)^{\frac{u_m}{u_0}}x_m, y_1, \ldots, y_n\right).
 \]
 from which we see that $\tau$ descends to a well-defined map on the orbits of $\sigma$. 
 
@@ -1479,7 +1521,7 @@ As mentioned in the previous section, we obtain an isomorphism of state spaces o
 \end{cor}
 
 \begin{proof}
-	From the previous section we have
+	From the Section \ref{ss:LGCYstatespace} we have
 	\[
 	\sA^{p,q}_{W,\s{G}}\cong H^{p,q}_{CR}\Big(\big[X_{W_1}\times X_{W_2}/\widetilde{\s{G}}\big];\CC\Big).
 	\]
@@ -1487,7 +1529,7 @@ As mentioned in the previous section, we obtain an isomorphism of state spaces o
 	\[
 	\sA^{p,q}_{\tw{W},\tw{G}}\cong H^{p,q}_{CR}\Big(\big[X_{f-g}/\widetilde{\tw{G}}\big];\CC\Big).
 	\]
-	Finally from the previous sections, we have
+	Finally from Section \ref{s:twistedstatespaceisom}, we have
 	\[
 	\sA^{p,q}_{W,\s{G}}\cong\sA^{p,q}_{\tw{W},\tw{G}}
 	\]
@@ -1500,11 +1542,12 @@ As mentioned in the previous section, we obtain an isomorphism of state spaces o
 
 \nathan{We may want to just remove this last bit, but I'm not sure. There was also some comment about a paper by Yui. I want to look at that one, but I think it was done in higher characteristic.}We expect this twist map to generalise naturally to complete intersections for polynomials $f_i$, 
 \[
-(\prod_{i=1}^r \mathbb{P}(w_0^{(i)}, \ldots, w_{k_1}^{(i)}))/\mathbb{Z}_2 \to \mathbb{P}((\prod_{i\ne 1}w_0^{(i)})w_1^{(1)}, \ldots, (\prod_{i\ne j}w_0^{(i)})w_1^{(j)}, \ldots, (\prod_{i\ne r}w_0^{(i)})w_{k_r}^{(r)}),
+\left(\prod_{i=1}^r \mathbb{P}\left(w_0^{(i)}, \ldots, w_{k_1}^{(i)}\right)\right)/\mathbb{Z}_2 \to 
+\mathbb{P}\left(\left(\prod_{i\ne 1}w_0^{(i)}\right)w_1^{(1)}, \ldots, \left(\prod_{i\ne j}w_0^{(i)}\right)w_1^{(j)}, \ldots, \left(\prod_{i\ne r}w_0^{(i)}\right)w_{k_r}^{(r)}\right),
 \] 
 where $\mathbb{Z}_2$ acts by negating the first coordinate of each factor, and sends 
 \[
-(\prod_{i=1}^r \{f_i = 0\})/\mathbb{Z}_2$$ to $$\{ f_1 = f_2 = \ldots = f_r\}.
+\left(\prod_{i=1}^r \{f_i = 0\}\right)/\mathbb{Z}_2$$ to $$\{ f_1 = f_2 = \ldots = f_r\}.
 \]
 
 %The twist map may also be easily generalised to automorphisms of order 3 and higher, as discussed in \cite{GLY}.
